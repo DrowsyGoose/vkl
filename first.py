@@ -5,7 +5,7 @@ import random
 
 bot = commands.Bot(command_prefix='>')
 
-@bot.command(mydick)
+@bot.command()
 async def mydick(ctx):
     piska=random.randint(1,41)
     await ctx.send('Бот измерял твой писюн. Результат:',piska,"см")
