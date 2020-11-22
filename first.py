@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-import os import random
+import os 
+import random
 
 bot = commands.Bot(command_prefix='>')
 
