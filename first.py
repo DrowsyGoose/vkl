@@ -29,7 +29,7 @@ async def report(ctx, user : discord.Member, *reason):
         
         goose = discord.Embed(title = f"{author} жалуется на  {user}, по причине: Без причины", color = (0x6eb3ac))
 
-        await channel.send(goose = goose)
+        await channel.send(embed = goose)
 
         await ctx.message.delete() 
 
@@ -37,7 +37,7 @@ async def report(ctx, user : discord.Member, *reason):
         
         goose1 = discord.Embed(title = f"{author} жалуется на  {user}, по причине: {rearray}", color = (0x6eb3ac))
 
-        await channel.send(goose1 = goose1)
+        await channel.send(embed = goose1)
 
         await ctx.message.delete()
 
