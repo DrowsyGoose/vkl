@@ -26,14 +26,18 @@ async def report(ctx, user : discord.Member, *reason):
     rearray = ' '.join(reason[:]) 
 
     if not rearray: 
+        
+        goose = discord.Embed(title = f"{author} жалуется на  {user}, по причине: Без причины", color = (0x6eb3ac))
 
-        await channel.send(f"{author} жалуется на  {user}, по причине: Без причины")
+        await channel.send(goose = goose)
 
         await ctx.message.delete() 
 
     else:
+        
+        goose1 = discord.Embed(title = f"{author} жалуется на  {user}, по причине: {rearray}", color = (0x6eb3ac))
 
-        await channel.send(f"{author} жалуется на {user}, по причине: {rearray}")
+        await channel.send(goose1 = goose1)
 
         await ctx.message.delete()
 
