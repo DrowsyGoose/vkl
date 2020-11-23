@@ -40,7 +40,7 @@ async def report(ctx, user : discord.Member, *reason):
         await channel.send(embed = goose1)
 
         await ctx.message.delete()
-@commands.command()
+@bot.command()
 async def meme(ctx):
     """Nice Meme!"""
     await ctx.send("http://niceme.me")
