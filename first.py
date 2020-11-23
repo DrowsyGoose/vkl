@@ -41,6 +41,18 @@ async def report(ctx, user : discord.Member, *reason):
 
         await ctx.message.delete()
 
+@bot.command()
+async def Модерн(self, ctx):
+    await ctx.send("Вы приняты в 1! район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
+
+@bot.command()
+async def Средневековье(self, ctx):
+    gorod=random.randint(2,6)
+    if gorod == 2:
+        await ctx.send("Вы приняты во {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod)))
+    else:
+        await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod)))
+        
 
 #520571349811462147
 token = os.environ.get('BOT_TOKEN')
