@@ -46,7 +46,7 @@ async def Модерн(self, ctx):
     await ctx.send("Вы приняты в 1! район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
 
 @bot.command()
-async def Средневековье(self, ctx):
+async def Средневековье(ctx):
     if gorod == 2:
         await ctx.send("Вы приняты во 2 район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
     else:
