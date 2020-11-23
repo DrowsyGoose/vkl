@@ -16,8 +16,28 @@ async def mydick(ctx):
 (0xF85252))
     await ctx.send(embed = embed)
 
+async def report(self, ctx, user : discord.Member, *reason)
+
+    channel = self.bot.get_channel(your channel id) #since it's a cog u need self.bot
+
+    author = ctx.message.author
+
+    rearray = ' '.join(reason[:]) #converts reason argument array to string
+
+    if not rearray: #what to do if there is no reason specified
+
+        await channel.send(f"{author} has reported {user}, reason: Not provided")
+
+        await ctx.message.delete() #I would get rid of the command input
+
+    else:
+
+        await channel.send(f"{author} has reported {user}, reason: {rearray}")
+
+        await ctx.message.delete()
 
 
+#520571349811462147
 token = os.environ.get('BOT_TOKEN')
 
 bot.run(str(token))
