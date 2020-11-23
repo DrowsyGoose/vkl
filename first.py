@@ -47,11 +47,10 @@ async def Модерн(self, ctx):
 
 @bot.command()
 async def Средневековье(self, ctx):
-    gorod=random.randint(2,6)
     if gorod == 2:
-        await ctx.send("Вы приняты во {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod)))
+        await ctx.send("Вы приняты во 2 район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
     else:
-        await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod)))
+        await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(random.randint(1, 6)))
         
 
 #520571349811462147
