@@ -18,7 +18,7 @@ async def mydick(ctx):
 
 async def report(self, ctx, user : discord.Member, *reason)
 
-    channel = self.bot.get_channel(your channel id) #since it's a cog u need self.bot
+    channel = self.bot.get_channel(739056944903618592) #since it's a cog u need self.bot
 
     author = ctx.message.author
 
@@ -26,7 +26,7 @@ async def report(self, ctx, user : discord.Member, *reason)
 
     if not rearray: #what to do if there is no reason specified
 
-        await channel.send(f"{author} has reported {user}, reason: Not provided")
+        await channel.send(f"{author} жалуется на  {user}, по причине: Not provided")
 
         await ctx.message.delete() #I would get rid of the command input
 
