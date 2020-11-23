@@ -17,9 +17,9 @@ async def mydick(ctx):
     await ctx.send(embed = embed)
 
 @bot.command(pass_context = True)
-async def report(self, ctx, user : discord.Member, *reason):
+async def report(ctx, user : discord.Member, *reason):
 
-    channel = self.bot.get_channel(739056944903618592) 
+    channel = bot.get_channel(739056944903618592) 
 
     author = ctx.message.author
 
