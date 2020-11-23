@@ -43,14 +43,15 @@ async def report(ctx, user : discord.Member, *reason):
 
 @bot.command()
 async def Модерн(ctx):
-    await ctx.send("Вы приняты в 1! район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
+    await ctx.send("Вы приняты в 1 район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
 
 @bot.command()
 async def Средневековье(ctx):
+    gorod=random.randint(1, 6)
     if gorod == 2:
         await ctx.send("Вы приняты во 2 район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
     else:
-        await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(random.randint(1, 6)))
+        await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
         
 
 #520571349811462147
