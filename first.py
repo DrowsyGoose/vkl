@@ -41,7 +41,7 @@ async def report(ctx, user : discord.Member, *reason):
 
         await ctx.message.delete()
 @commands.command()
-async def meme(self, ctx):
+async def meme(ctx):
     """Nice Meme!"""
     await ctx.send("http://niceme.me")
 
