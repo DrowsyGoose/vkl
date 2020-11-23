@@ -40,6 +40,10 @@ async def report(ctx, user : discord.Member, *reason):
         await channel.send(embed = goose1)
 
         await ctx.message.delete()
+@commands.command()
+async def meme(self, ctx):
+    """Nice Meme!"""
+    await ctx.send("http://niceme.me")
 
 
 #520571349811462147
