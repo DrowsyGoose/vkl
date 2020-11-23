@@ -16,7 +16,7 @@ async def mydick(ctx):
 (0xF85252))
     await ctx.send(embed = embed)
 
-async def report(self, ctx, user : discord.Member, *reason)
+async def report(self, ctx, user : discord.Member, *reason):
 
     channel = self.bot.get_channel(739056944903618592) 
 
