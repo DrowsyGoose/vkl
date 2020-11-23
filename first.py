@@ -42,7 +42,7 @@ async def report(ctx, user : discord.Member, *reason):
         await ctx.message.delete()
 
 @bot.command()
-async def Модерн(self, ctx):
+async def Модерн(ctx):
     await ctx.send("Вы приняты в 1! район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258")
 
 @bot.command()
