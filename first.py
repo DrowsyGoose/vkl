@@ -56,8 +56,9 @@ async def Средневековье(ctx):
 async def on_message(message): 
 	if message.author == client.user: 
 		return  
-	 
+		 
 	not_allow = message.content
+	not_allow_true = re.search("^https.*com$",not_allow)
     if (not_allow_true): 
 		await message.delete() 
 		await message.channel.send("Ссылки запрещены в чате!") 
