@@ -61,7 +61,7 @@ async def on_message(message):
 		 
 	not_allow = message.content
 	not_allow_true = re.search("^https.*com$",not_allow)
-    if (not_allow_true): 
+	if (not_allow_true): 
 		await message.delete() 
 		await message.channel.send("Ссылки запрещены в чате!") 
 
