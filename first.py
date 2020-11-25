@@ -12,8 +12,7 @@ async def on_ready():
     
 @bot.command(pass_context = True)
 async def mydick(ctx):
-    embed = discord.Embed(title = "Бот измерял твою пипиську. Результат:", description = (random.randint(1,41)), color = 
-(0xF85252))
+    embed = discord.Embed(title = "Бот измерял твою пипиську. Результат:", description = ("Длина:",random.randint(1,45)), description = ("Ширина:",random.randint(1,10))
     await ctx.send(embed = embed)
 
 @bot.command(pass_context = True)
