@@ -55,17 +55,6 @@ async def Средневековье(ctx):
     else:
         await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
 
-@client.event
-async def on_message(message): 
-	if message.author == client: 
-		return  
-		 
-	not_allow = message.content
-	not_allow_true = re.search("^https.*com$",not_allow)
-	if (not_allow_true): 
-		await message.delete() 
-		await message.channel.send("Ссылки запрещены в чате!") 
-
         
 
 #520571349811462147
