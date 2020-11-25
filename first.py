@@ -57,7 +57,7 @@ async def Средневековье(ctx):
 
 @client.event
 async def on_message(message): 
-	if message.author == client.user: 
+	if message.author == client: 
 		return  
 		 
 	not_allow = message.content
