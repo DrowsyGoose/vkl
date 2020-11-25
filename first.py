@@ -1,8 +1,10 @@
 import discord
 from discord.ext import commands
+import re
 import os 
 import random
 import asyncio
+from dotenv import load_dotenv
 
 bot = commands.Bot(command_prefix='>')
 
