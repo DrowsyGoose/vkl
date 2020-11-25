@@ -54,7 +54,7 @@ async def Средневековье(ctx):
     else:
         await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
 
-@bot.event 
+@client.event()
 async def on_message(message): 
 	if message.author == client.user: 
 		return  
