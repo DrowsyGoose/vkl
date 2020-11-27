@@ -55,7 +55,9 @@ async def Средневековье(ctx):
     else:
         await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
 
-#520571349811462147
+#
+
+
 token = os.environ.get('BOT_TOKEN')
 
 bot.run(str(token))
