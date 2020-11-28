@@ -83,7 +83,7 @@ async def play(ctx,game):
 
             await ctx.send("Слишком маленькое число, попробуй еще раз")
 
-        if int(guess) == number:
+        if int(go) == number:
 
             await ctx.send("Ты угадал, молодец.")
             
