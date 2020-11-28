@@ -59,7 +59,7 @@ async def Средневековье(ctx):
 
 async def on_message(message):
 
-    if message.content.startswith("?start"): 
+    if message.content.startswith(">spin"): 
 
         channel = message.channel
 
