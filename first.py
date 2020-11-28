@@ -55,6 +55,33 @@ async def Средневековье(ctx):
     else:
         await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
 
+@bot.event
+
+async def on_message(message):
+
+    if message.content.startswith("?start"): 
+
+        channel = message.channel
+
+        await channel.send("Quess the number from 0-10 by writing number in this channel!") 
+
+        number1 = random.randint(1,10) 
+
+        print(number1)
+
+        
+
+        number2 = str(number1) 
+
+        def check(m):
+
+            return m.content == number2 and m.channel == channel 
+
+        
+
+        msg = await client.wait_for('message', check=check)
+
+        await channel.send("Correct answer {.author}" .format(msg)) 
 #
 
 
