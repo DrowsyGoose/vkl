@@ -55,9 +55,9 @@ async def Средневековье(ctx):
     else:
         await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
 
-@bot.event
+@bot.command()
 
-async def on_message(message):
+async def spin(message):
 
     if message.content.startswith(">spin"): 
 
