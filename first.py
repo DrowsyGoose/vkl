@@ -59,7 +59,7 @@ async def Средневековье(ctx):
 
 async def play(ctx,game):
 
-    if game == "Угадай число":
+    if game == "1":
 
         await ctx.send("Окей, давай начнем нашу игру")
 
@@ -73,11 +73,11 @@ async def play(ctx,game):
 
         number = random.randint(1, 12)
 
-        if int(guess) > number:
+        if int(go) > number:
 
             await ctx.send("Слишком большое число, попробуй еще раз")
 
-        if int(guess) < number:
+        if int(go) < number:
 
             await ctx.send("Слишком маленькое число, попробуй еще раз")
 
@@ -85,7 +85,7 @@ async def play(ctx,game):
 
             await ctx.send("Ты угадал, молодец.")
             
-        if int(guess) > 12:
+        if int(go) > 12:
             
             await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
 
