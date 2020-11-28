@@ -87,7 +87,7 @@ async def play(ctx,game):
             
         if int(guess) > 12:
             
-            await.ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
+            await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
 
 
         await ctx.send(number)
