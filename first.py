@@ -76,13 +76,13 @@ async def go(ctx, num: int = None):
 
     number = random.randint(1, 12)
 
-    if num > number:
+    if num != number:
 
-        await ctx.send("Слишком большое число, попробуй еще раз")
+        await ctx.send("Не верно, попробуй еще раз")
 
-    if num < number:
 
-        await ctx.send("Слишком маленькое число, попробуй еще раз")
+
+
 
     if num == number:
 
@@ -93,7 +93,7 @@ async def go(ctx, num: int = None):
         await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
 
 
-    await ctx.send(number)
+    await ctx.send("А бот загадал число ",number)
 
 #
 
