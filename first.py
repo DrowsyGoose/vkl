@@ -75,19 +75,19 @@ async def play(ctx,game):
 
         number = random.randint(1, 12)
 
-        if int(num) > number:
+        if num > number:
 
             await ctx.send("Слишком большое число, попробуй еще раз")
 
-        if int(num) < number:
+        if num < number:
 
             await ctx.send("Слишком маленькое число, попробуй еще раз")
 
-        if int(num) == number:
+        if num == number:
 
             await ctx.send("Ты угадал, молодец.")
             
-        if int(num) > cislo:
+        if num > cislo:
             
             await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
 
