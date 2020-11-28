@@ -93,7 +93,7 @@ async def go(ctx, num: int = None):
         await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
 
 
-    await ctx.send("А бот загадал число ",number)
+    await ctx.send("А бот загадал число ", number)
 
 #
 
