@@ -67,9 +67,9 @@ async def play(ctx,game):
 
         await ctx.send("Используй >go чтобы начать")
 
-    @bot.command()
+@bot.command()
 
-    async def go(ctx, num: int = None):
+async def go(ctx, num: int = None):
         
         cislo = 12
 
