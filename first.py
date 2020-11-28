@@ -69,7 +69,7 @@ async def play(ctx,game):
 
     @bot.command()
 
-    async def go(ctx, num: int):
+    async def go(ctx, num: int = None):
         
         cislo = 12
 
