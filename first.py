@@ -55,7 +55,42 @@ async def Средневековье(ctx):
     else:
         await ctx.send("Вы приняты в {} район. Для подробностей напишите в лс Pelmeshka_Otoidi#1258".format(gorod))
 
+@bot.command()
 
+async def play(ctx,game):
+
+    if game == "Угадай число":
+
+        await ctx.send("Окей, давай начнем нашу игру")
+
+        await ctx.send("Угадай число от 1 до 12")
+
+        await ctx.send("Используй >go чтобы начать")
+
+    @bot.command()
+
+    async def go(ctx):
+
+        number = random.randint(1, 12)
+
+        if int(guess) > number:
+
+            await ctx.send("Слишком большое число, попробуй еще раз")
+
+        if int(guess) < number:
+
+            await ctx.send("Слишком маленькое число, попробуй еще раз")
+
+        if int(guess) == number:
+
+            await ctx.send("Ты угадал, молодец.")
+            
+        if int(gyess) > 12:
+            
+            await.ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
+
+
+        await ctx.send(number)
 
 #
 
