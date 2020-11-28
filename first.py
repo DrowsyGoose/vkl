@@ -67,32 +67,33 @@ async def play(ctx,game):
 
         await ctx.send("Используй >go чтобы начать")
 
-        @bot.command()
+@bot.command()
 
-        async def go(ctx, num: int = None):
         
-        cislo = 12
+async def go(ctx, num: int = None):
+        
+    cislo = 12
 
-        number = random.randint(1, 12)
+    number = random.randint(1, 12)
 
-        if num > number:
+    if num > number:
 
-            await ctx.send("Слишком большое число, попробуй еще раз")
+        await ctx.send("Слишком большое число, попробуй еще раз")
 
-        if num < number:
+    if num < number:
 
-            await ctx.send("Слишком маленькое число, попробуй еще раз")
+        await ctx.send("Слишком маленькое число, попробуй еще раз")
 
-        if num == number:
+    if num == number:
 
-            await ctx.send("Ты угадал, молодец.")
+        await ctx.send("Ты угадал, молодец.")
             
-        if num > cislo:
+    if num > cislo:
             
-            await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
+        await ctx.send("Ты далбаеб, по русски написано, от 1 до 12")
 
 
-        await ctx.send(number)
+    await ctx.send(number)
 
 #
 
