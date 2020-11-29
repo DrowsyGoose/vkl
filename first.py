@@ -95,31 +95,31 @@ async def go(ctx, num: int = None):
     await ctx.send("А бот загадал число:")
     await ctx.send(number)
 
-@Bot.command()
+@bot.command()
 
 
 
-    async def say(ctx, channel : discord.TextChannel, *args):
+async def say(ctx, channel : discord.TextChannel, *args):
 
-        await ctx.message.delete()
+    await ctx.message.delete()
 
-        if not channel:
+    if not channel:
 
-            await ctx.send('Введите канал, в который вы хотите отправить сообщение')
+        await ctx.send('Введите канал, в который вы хотите отправить сообщение')
 
-            return
+        return
 
-        if not args:
+    if not args:
 
-            await ctx.send('Необходимо ввести текст сообщения')
+        await ctx.send('Необходимо ввести текст сообщения')
 
-            text = ''
+        text = ''
 
-        for item in args:
+    for item in args:
 
-            text = text + item + ' '
+        text = text + item + ' '
 
-            await channel.send(text)
+        await channel.send(text)
 #
 
 
