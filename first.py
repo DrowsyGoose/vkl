@@ -95,6 +95,31 @@ async def go(ctx, num: int = None):
     await ctx.send("А бот загадал число:")
     await ctx.send(number)
 
+@Bot.command()
+
+
+
+    async def say(ctx, channel : discord.TextChannel, *args):
+
+        await ctx.message.delete()
+
+        if not channel:
+
+            await ctx.send('Введите канал, в который вы хотите отправить сообщение')
+
+            return
+
+        if not args:
+
+            await ctx.send('Необходимо ввести текст сообщения')
+
+            text = ''
+
+        for item in args:
+
+            text = text + item + ' '
+
+            await channel.send(text)
 #
 
 
