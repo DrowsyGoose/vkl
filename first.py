@@ -97,19 +97,21 @@ async def go(ctx, num: int = None):
 
 
 
-@bot.command(description="Echos, developers only", pass_context=True)
+@bot.command()
 
-async def echo(ctx, id, *, echowords:str):
+async def send(ctx, otpr):
+    channel = bot.get_channel(739056945474043986)
+    await channel.send(otpr)
 
-    if ctx.message.author.id in []: 
 
-        sendchannel = bot.get_channel(739056945474043986)
 
-        await bot.send_message(sendchannel, echowords)
 
-    else:
 
-        await bot.say("Команда только для моего хозяина:<")
+
+
+
+
+
 
 
 
