@@ -97,7 +97,19 @@ async def go(ctx, num: int = None):
 
 
 
+@bot.command(description="Echos, developers only", pass_context=True)
 
+async def echo(ctx, id, echowords:str):
+
+    if ctx.message.author.id in []: #put in id's in a list or replace it with one string
+
+        sendchannel = bot.get_channel(739056945474043986)
+
+        await bot.send_message(sendchannel, echowords)
+
+    else:
+
+        await bot.say("Команда только для гусика:<")
 
 
 
