@@ -102,11 +102,12 @@ async def go(ctx, num: int = None):
 async def send(ctx,*, otpr):
     channel = bot.get_channel(739056945474043986)
     await channel.send(otpr)
-bot.command()
+@bot.command()
 async def me(ctx,*, sosok):
     uss=ctx.message.author
     await ctx.send(uss, sosok)
     await ctx.message.delete()
+    
 
 
 
