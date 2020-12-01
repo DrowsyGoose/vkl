@@ -105,7 +105,7 @@ async def send(ctx,*, otpr):
 @bot.command()
 async def me(ctx,*, sosok):
     uss=ctx.message.author
-    await ctx.send(uss, sosok)
+    await ctx.author.send(uss, sosok)
     await ctx.message.delete()
     
 
