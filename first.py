@@ -105,17 +105,6 @@ async def send(ctx,*, otpr):
 
     
     
-@bot.command()
-@commands.has_any_role("Администратор","Главный мэр всех городов")
-async def ban (ctx, member:discord.User=None, reason =None):
-    if member == None or member == ctx.message.author:
-        await ctx.channel.send("Вы не можете забанить себя")
-        return
-    if reason == None:
-        reason = "За то что был уродом!"
-    message = f"Вы были забанены в {ctx.guild.name} по причине {reason}"
-    await member.send(message)
-    await ctx.send(f"{member} забанен!")
 
 
 
