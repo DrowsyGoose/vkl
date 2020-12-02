@@ -102,12 +102,20 @@ async def go(ctx, num: int = None):
 async def send(ctx,*, otpr):
     channel = bot.get_channel(739056945474043986)
     await channel.send(otpr)
-@bot.command()
-async def me(ctx,*, sosok):
-    uss=ctx.message.author
-    await ctx.author.send(uss, sosok)
-    await ctx.message.delete()
+
     
+    
+@bot.command()
+@commands.has_any_role("Администратор","Главный мэр всех городов")
+async def ban (ctx, member:discord.User=None, reason =None):
+    if member == None or member == ctx.message.author:
+        await ctx.channel.send("Вы не можете забанить себя")
+        return
+    if reason == None:
+        reason = "За то что был уродом!"
+    message = f"Вы были забанены в {ctx.guild.name} по причине {reason}"
+    await member.send(message)
+    await ctx.send(f"{member} забанен!")
 
 
 
