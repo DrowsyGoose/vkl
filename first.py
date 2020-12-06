@@ -124,46 +124,6 @@ async def rp(ctx,com,*ss):
         await ctx.send(f"**{autho}** {s} **({ran})**")
         await ctx.message.delete()
         
-try:
-    with open("users.json") as fp:
-        users = json.load(fp)
-except Exception:
-    users = {}
-
-def save_users():
-    with open("users.json", "w+") as fp:
-        json.dump(users, fp, sort_keys=True, indent=4)
-
-def add_points(user: discord.User, points: int):
-    id = user.id
-    if id not in users:
-        users[id] = {}
-    users[id]["points"] = users[id].get("points", 0) + points
-    print("{} now has {} points".format(user.name, users[id]["points"]))
-    save_users()
-
-def get_points(user: discord.User):
-    id = user.id
-    if id in users:
-        return users[id].get("points", 0)
-    return 0
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    print("{} sent a message".format(message.author.name))
-    if message.content.lower().startswith("!points"):
-        msg = "You have {} points!".format(get_points(message.author))
-        await client.send_message(message.channel, msg)
-    add_points(message.author, 1)
-    #ddd
-               
-
-
-
-
-
 
 
 
