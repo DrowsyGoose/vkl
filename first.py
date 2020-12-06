@@ -156,6 +156,7 @@ async def on_message(message):
         msg = "You have {} points!".format(get_points(message.author))
         await client.send_message(message.channel, msg)
     add_points(message.author, 1)
+    #ddd
                
 
 
