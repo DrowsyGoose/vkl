@@ -168,7 +168,7 @@ async def level_up(users, user, message):
         levels = json.load(g)
     await update_data(levels)
     with open('levels.json', 'w') as f:
-        json.dump(levels, f)
+        json.dump(levels, message)
 
     experience = users[f'{user.id}']['опыт']
     lvl_start = users[f'{user.id}']['уровень']
