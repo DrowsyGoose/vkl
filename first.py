@@ -130,7 +130,7 @@ async def on_member_join(member):
     with open('users.json', 'r') as f:
         users = json.load(f)
 
-    await update_data(users, member)
+    users[str(member.id)] = '0'
 
     with open('users.json', 'w') as f:
         json.dump(users, f)
