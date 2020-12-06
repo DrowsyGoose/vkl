@@ -126,57 +126,57 @@ async def rp(ctx,com,*ss):
         await ctx.message.delete()
         
         
-@bot.event
-async def on_member_join(member):
-    with open('users.json', 'r') as f:
-        users = json.load(f)
+#@bot.event
+#async def on_member_join(member):
+    #with open('users.json', 'r') as f:
+        #users = json.load(f)
 
-    users[str(member.id)] = '0'
+    #users[str(member.id)] = '0'
 
-    with open('users.json', 'w') as f:
-        json.dump(users, f)
+    #with open('users.json', 'w') as f:
+        #json.dump(users, f)
 
 
-@bot.event
-async def on_message(message):
-    if message.author.bot == False:
-        with open('users.json', 'r') as f:
-            users = json.load(f)
+#@bot.event
+#async def on_message(message):
+    #if message.author.bot == False:
+        #with open('users.json', 'r') as f:
+            #users = json.load(f)
         
 
-        await update_data(users, message.author)
-        await add_experience(users, message.author, 5)
-        await level_up(users, message.author, message)
+        #await update_data(users, message.author)
+        #await add_experience(users, message.author, 5)
+        #await level_up(users, message.author, message)
 
-        with open('users.json', 'w') as f:
-            json.dump(users, f)
+        #with open('users.json', 'w') as f:
+            #json.dump(users, f)
 
-    await bot.process_commands(message)
-
-
-async def update_data(users, user):
-    if not f'{user.id}' in users:
-        users[f'{user.id}'] = {}
-        users[f'{user.id}']['опыт'] = 0
-        users[f'{user.id}']['уровень'] = 1
+    #await bot.process_commands(message)
 
 
-async def add_experience(users, user, exp):
-    users[f'{user.id}']['опыт'] += exp
+#async def update_data(users, user):
+    #if not f'{user.id}' in users:
+        #users[f'{user.id}'] = {}
+        #users[f'{user.id}']['опыт'] = 0
+        #users[f'{user.id}']['уровень'] = 1
 
 
-async def level_up(user, users, message):
-    with open('levels.json', 'r') as g:
-        levels = json.load(g)
-    with open('levels.json', 'w') as g:
-        json.dump(levels, g)
-    experience = users[user['id']]['опыт']
-    lvl_start = users[user['id']]['уровень']
-    print(user)
-    lvl_end = int(experience ** (1 / 4))
-    if lvl_start < lvl_end:
-        await message.channel.send(f'{user.mention} поднял уровень до {lvl_end}')
-        users[f'{user.id}']['уровень'] = lvl_end
+#async def add_experience(users, user, exp):
+    #users[f'{user.id}']['опыт'] += exp
+
+
+#async def level_up(user, users, message):
+    #with open('levels.json', 'r') as g:
+        #levels = json.load(g)
+    #with open('levels.json', 'w') as g:
+        #json.dump(levels, g)
+    #experience = users[user['id']]['опыт']
+    #lvl_start = users[user['id']]['уровень']
+    #print(user)
+    #lvl_end = int(experience ** (1 / 4))
+    #if lvl_start < lvl_end:
+        #await message.channel.send(f'{user.mention} поднял уровень до {lvl_end}')
+        #users[f'{user.id}']['уровень'] = lvl_end
         
 
 @bot.command()
@@ -186,16 +186,16 @@ async def level(ctx, member: discord.Member = None):
         with open('users.json', 'r') as f:
             users = json.load(f)
             print(users)
-        exp = users[str(id)]['опыт']
-        lvl = users[str(id)]['уровень']
-        await ctx.send(f'У тебя {lvl} уровень! И {exp} опыта')
-    else:
-        id = member.id
-        with open('users.json', 'r') as f:
-            users = json.load(f)
-        exp = users[str(id)]['опыт']
-        lvl = users[str(id)]['уровень']
-        await ctx.send(f'{member} имеет {lvl} уровень! И {exp} опыта')
+        #exp = users[str(id)]['опыт']
+        #lvl = users[str(id)]['уровень']
+        #await ctx.send(f'У тебя {lvl} уровень! И {exp} опыта')
+    #else:
+        #id = member.id
+        #with open('users.json', 'r') as f:
+            #users = json.load(f)
+        #exp = users[str(id)]['опыт']
+        #lvl = users[str(id)]['уровень']
+        #await ctx.send(f'{member} имеет {lvl} уровень! И {exp} опыта')
 
 
 
