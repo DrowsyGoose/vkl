@@ -111,9 +111,10 @@ async def me(ctx,*,s):
 
     
 @bot.command()
-async def rp(ctx,com,*s):
+async def rp(ctx,com,*ss):
     autho = ctx.message.author.name
     ran = random.choice(["Удачно","Неудачно"])
+    s = ' '.join(ss[:]) 
     if com == "me":
         await ctx.send(f"{autho} {s}")
         await ctx.message.delete()
