@@ -165,6 +165,7 @@ async def add_experience(users, user, exp):
 
 
 async def level_up(user, users, message):
+    print(user)
     with open('levels.json', 'r') as g:
         levels = json.load(g)
     with open('levels.json', 'w') as g:
