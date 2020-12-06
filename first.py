@@ -120,6 +120,7 @@ async def rp(ctx,com,*ss):
         await ctx.message.delete()
     elif com == "try":
         await ctx.send(f"{autho} {s} ({ran})")
+        await ctx.message.delete()
         
         
     
