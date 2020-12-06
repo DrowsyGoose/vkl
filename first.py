@@ -195,7 +195,7 @@ async def level(ctx, member: discord.Member = None):
         exp = users[str(id)]['опыт']
         lvl = users[str(id)]['уровень']
         await ctx.send(f'{member} имеет {lvl} уровень! И {exp} опыта')
-        
+print(users)
 
 
 
