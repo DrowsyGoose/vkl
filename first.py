@@ -110,6 +110,20 @@ async def me(ctx,*,s):
     await ctx.message.delete()
 
     
+@bot.command()
+async def rp(ctx,com,*s):
+    autho = ctx.message.author.name
+    ran = random.choice("Удачно","Неудачно")
+    if com == "me":
+        await ctx.send(f"{autho} {s}")
+        await ctx.message.delete()
+    elif com == "try":
+        await ctx.send(f"{autho} {s} ({ran})")
+        
+        
+    
+
+    
     
 
 
