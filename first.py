@@ -185,6 +185,7 @@ async def level(ctx, member: discord.Member = None):
         id = ctx.message.author.id
         with open('users.json', 'r') as f:
             users = json.load(f)
+print(users)
         exp = users[str(id)]['опыт']
         lvl = users[str(id)]['уровень']
         await ctx.send(f'У тебя {lvl} уровень! И {exp} опыта')
@@ -195,7 +196,7 @@ async def level(ctx, member: discord.Member = None):
         exp = users[str(id)]['опыт']
         lvl = users[str(id)]['уровень']
         await ctx.send(f'{member} имеет {lvl} уровень! И {exp} опыта')
-print(users)
+
 
 
 
