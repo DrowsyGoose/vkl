@@ -165,7 +165,7 @@ async def add_experience(users, user, exp):
 async def level_up(users, user, message):
     with open('levels.json', 'r') as g:
         levels = json.load(g)
-    experience = users[f'{user.id}']['опыт]
+    experience = users[f'{user.id}']['опыт']
     lvl_start = users[f'{user.id}']['лвл']
     lvl_end = int(experience ** (1 / 4))
     if lvl_start < lvl_end:
@@ -178,13 +178,13 @@ async def level(ctx, member: discord.Member = None):
         id = ctx.message.author.id
         with open('users.json', 'r') as f:
             users = json.load(f)
-        lvl = users[str(id)]['level']
+        lvl = users[str(id)]['лвл']
         await ctx.send(f'Твой уровень {lvl}!')
     else:
         id = member.id
         with open('users.json', 'r') as f:
             users = json.load(f)
-        lvl = users[str(id)]['level']
+        lvl = users[str(id)]['лвл']
         await ctx.send(f'{member} имеет уровень {lvl}!')
         
         
