@@ -124,7 +124,7 @@ async def rp(ctx,com,*ss):
         await ctx.message.delete()
         
         
-@client.event
+@bot.event
 async def on_member_join(member):
     with open('users.json', 'r') as f:
         users = json.load(f)
