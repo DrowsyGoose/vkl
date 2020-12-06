@@ -144,7 +144,7 @@ async def on_message(message):
 
         await update_data(users, message.author)
         await add_experience(users, message.author, 5)
-        await level_up(message)
+        await level_up(users, message.author, message)
 
         with open('users.json', 'w') as f:
             json.dump(users, f)
@@ -163,7 +163,7 @@ async def add_experience(users, user, exp):
     users[f'{user.id}']['опыт'] += exp
 
 
-async def level_up(message):
+async def level_up(user, users, message):
     with open('levels.json', 'r') as g:
         levels = json.load(g)
         
