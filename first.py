@@ -9,7 +9,6 @@ import json
 
 
 bot = commands.Bot(command_prefix='>')
-client = discord.Client()
 
 @bot.event
 async def on_ready():
@@ -136,7 +135,7 @@ async def on_member_join(member):
         json.dump(users, f)
 
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.author.bot == False:
         with open('users.json', 'r') as f:
@@ -173,7 +172,7 @@ async def level_up(users, user, message):
         await message.channel.send(f'{user.mention} has leveled up to level {lvl_end}')
         users[f'{user.id}']['level'] = lvl_end
 
-@client.command()
+@bot.command()
 async def level(ctx, member: discord.Member = None):
     if not member:
         id = ctx.message.author.id
