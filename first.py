@@ -169,8 +169,8 @@ async def level_up(user, users, message):
         levels = json.load(g)
     with open('levels.json', 'w') as g:
         json.dump(levels, g)
-    experience = users[{user['id']}']['опыт']
-    lvl_start = users[{user['id']}']['уровень']
+    experience = users[user['id']']['опыт']
+    lvl_start = users[user['id']']['уровень']
     lvl_end = int(experience ** (1 / 4))
     if lvl_start < lvl_end:
         await message.channel.send(f'{user.mention} поднял уровень до {lvl_end}')
