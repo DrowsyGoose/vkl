@@ -117,10 +117,10 @@ async def rp(ctx,com,*ss):
     ran = random.choice(["Удачно","Неудачно"])
     s = ' '.join(ss[:]) 
     if com == "me":
-        await ctx.send(f"{autho} {s}")
+        await ctx.send(f"**{autho}** {s}")
         await ctx.message.delete()
     elif com == "try":
-        await ctx.send(f"{autho} {s} ({ran})")
+        await ctx.send(f"**{autho}** {s} **({ran})**")
         await ctx.message.delete()
                
 
