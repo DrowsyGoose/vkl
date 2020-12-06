@@ -168,7 +168,7 @@ async def level_up(user, users, message):
     with open('levels.json', 'r') as g:
         levels = json.load(g)
     with open('levels.json', 'w') as g:
-        json_dump(levels, g)
+        json.dump(levels, g)
     experience = users[f'{user.id}']['опыт']
     lvl_start = users[f'{user.id}']['уровень']
     lvl_end = int(experience ** (1 / 4))
