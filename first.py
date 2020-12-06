@@ -104,7 +104,7 @@ async def send(ctx,*, otpr):
     await channel.send(otpr)
     
 @bot.command()
-async def me(ctx,*s):
+async def me(ctx,*,s):
     autho = ctx.message.author
     await ctx.send(f"{autho} {s}")
     await ctx.message.delete()
