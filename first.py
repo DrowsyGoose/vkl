@@ -141,6 +141,7 @@ async def on_message(message):
     if message.author.bot == False:
         with open('users.json', 'r') as f:
             users = json.load(f)
+        
 
         await update_data(users, message.author)
         await add_experience(users, message.author, 5)
@@ -166,6 +167,8 @@ async def add_experience(users, user, exp):
 async def level_up(user, users, message):
     with open('levels.json', 'r') as g:
         levels = json.load(g)
+    with open('levels.json', 'w') as g:
+        json_dump(levels, g)
     experience = users[f'{user.id}']['опыт']
     lvl_start = users[f'{user.id}']['уровень']
     lvl_end = int(experience ** (1 / 4))
