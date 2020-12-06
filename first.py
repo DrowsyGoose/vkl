@@ -9,6 +9,7 @@ import json
 
 
 bot = commands.Bot(command_prefix='>')
+client = discord.Client()
 
 @bot.event
 async def on_ready():
@@ -147,7 +148,7 @@ def get_points(user: discord.User):
         return users[id].get("points", 0)
     return 0
 
-@bot.event
+@client.event
 async def on_message(message):
     if message.author == client.user:
         return
