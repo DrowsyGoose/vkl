@@ -16,6 +16,12 @@ from mcstatus import MinecraftServer
 bot = commands.Bot(command_prefix='>')
 
 @bot.command()
+async def pla(ctx):
+    serv = MinecraftServer.lookup("mc.reworlds.ru")
+    query = serv.query()
+    await ctx.send("Игроки: {0}".format(" ".join(query.players.names)))
+
+@bot.command()
 async def server(ctx):
     serv = MinecraftServer.lookup("mc.reworlds.ru")
     status = serv.status()
