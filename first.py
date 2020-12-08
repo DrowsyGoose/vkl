@@ -115,12 +115,7 @@ async def go(ctx, num: int = None):
 async def send(ctx,*, otpr):
     channel = bot.get_channel(739056945474043986)
     await channel.send(otpr)
-@_send.error
-async def send_error(error, ctx):
-    if isinstance(error, MissingPermissions):
-        text = "Извени {}, у тебя нету прав для этой команды !".format(ctx.message.author)
-        await bot.send_message(ctx.message.channel, text)
-    
+
 @bot.command()
 async def me(ctx,*,s):
     autho = ctx.message.author
