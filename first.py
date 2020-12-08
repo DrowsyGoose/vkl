@@ -6,11 +6,21 @@ import random
 import asyncio
 import json
 import requests
-#1
+from mcstatus import MinecraftServer
+
+
+
 
 
 
 bot = commands.Bot(command_prefix='>')
+
+@bot.command()
+async def server(ctx):
+    serv = MinecraftServer.lookup("mc.reworlds.ru")
+    status = serv.status()
+    embed = discord.Embed(title = "MC.REWORLDS.RU", description = "Онайлн на сервере {0}. Пинг {0} ms".format(status.players.online, status.latency))
+    await ctx.send(embed=embed)
 
 @bot.event
 async def on_ready():
