@@ -111,10 +111,13 @@ async def go(ctx, num: int = None):
 
 
 @bot.command()
-@bot.has_permissions(administator=True)
 async def send(ctx,*, otpr):
+    permissions = ctx.message.author.permissions_in(ctx.message.channel)
+    permissions.update(read_messages=False)
+    await self.bot.edit_channel_permissions(ctx.message.channel, ctx.message.author, permissions)
     channel = bot.get_channel(739056945474043986)
     await channel.send(otpr)
+    
 
 @bot.command()
 async def me(ctx,*,s):
