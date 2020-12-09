@@ -21,6 +21,11 @@ async def server(ctx):
     status = serv.status()
     embed = discord.Embed(title = "MC.REWORLDS.RU", description = "Онлайн сервере {0}. Отклик {1} ms".format(status.players.online, status.latency), color = (0x6eb3ac))
     await ctx.send(embed=embed)
+    
+@server.error
+async def server_error(self, ctx, error):
+    if isinstance(error):
+        await ctx.send("Сервер офлайн. Опять векстер шаманит")
 
 @bot.event
 async def on_ready():
