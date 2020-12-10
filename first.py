@@ -20,7 +20,8 @@ async def server(ctx):
     serv = MinecraftServer.lookup("mc.reworlds.ru")
     status = serv.status()
     embed = discord.Embed(title = "MC.REWORLDS.RU", description = "Онлайн сервере {0}. Отклик {1} ms".format(status.players.online, status.latency), color = (0x6eb3ac))
-
+    await ctx.send(embed=embed)
+    
 @bot.event
 async def on_ready():
     print("Раб готов к работе")
