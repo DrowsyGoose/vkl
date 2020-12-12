@@ -33,7 +33,7 @@ async def mydick(ctx):
     embed = discord.Embed(title = "Бот измерял твою пипиську. Ваш результат:", description = rand, color = (0x6eb3ac))
     await ctx.send(embed = embed)
     with open('gam.json', 'w+') as f:
-        json.dump(idd, rand, f)
+        json.dump(rand, f)
 
 @bot.command(pass_context = True)
 async def report(ctx, user : discord.Member, *reason):
