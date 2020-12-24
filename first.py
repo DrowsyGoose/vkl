@@ -7,6 +7,7 @@ import asyncio
 import json
 import requests
 from mcstatus import MinecraftServer
+from discord.utils import get
 
 
 
@@ -163,7 +164,7 @@ async def ConfirmMessage(ctx):
     while True:
         try:
             reaction, user = await client.wait_for("reaction_add", check=check, timeout=10)
-        roleToRemove = discord.utils.get(ctx.guild.roles, name='new role')
+        roleToRemove = get(ctx.guild.roles, name='new role')
         memberToRemoveRole = get(ctx.guild.members,name=user.display_name)
         await memberToRemoveRole.remove_roles(roleToRemove)
 
