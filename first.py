@@ -16,6 +16,10 @@ from discord.utils import get
 
 bot = commands.Bot(command_prefix='>')
 
+@bot.event
+async def on_member_join(member):
+     role = discord.utils.get(member.server.roles, name="unverified") 
+     await client.add_roles(member, role)
 @bot.command()
 async def server(ctx):
     serv = MinecraftServer.lookup("mc.reworlds.ru")
