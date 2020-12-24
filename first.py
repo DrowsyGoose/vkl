@@ -138,6 +138,34 @@ async def rp(ctx,com,*ss):
     elif com == "try":
         await ctx.send(f"**{autho}** {s} **({ran})**")
         await ctx.message.delete()
+        
+confirmEmoji = '\U00002705'    
+
+@client.event()
+async def on_ready():
+    print("[Status] Ready")
+
+@client.event()
+async def on_member_join(ctx, member):
+    channel = get(ctx.guild.channels,name="Добро пожаловать")
+    await channel.send(f"{member.mention} новенький")
+
+@client.command()
+async def ConfirmMessage(ctx):
+    global confirmEmoji
+    message = await ctx.send("Тест")
+    await message.add_reaction(emoji=confirmEmoji)
+    def check(reaction, user):
+        if reaction.emoji == confirmEmoji:
+            return True
+        else: 
+            return False
+    while True:
+        try:
+            reaction, user = await client.wait_for("reaction_add", check=check, timeout=10)
+        roleToRemove = get(ctx.guild.roles,name="unverified")
+        memberToRemoveRole = get(ctx.guild.members,name=user.display_name)
+        await memberToRemoveRole.remove_roles(roleToRemove)
 
 
 token = os.environ.get('BOT_TOKEN')
