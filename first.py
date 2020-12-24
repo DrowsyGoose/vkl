@@ -140,34 +140,41 @@ async def rp(ctx,com,*ss):
         await ctx.send(f"**{autho}** {s} **({ran})**")
         await ctx.message.delete()
         
-confirmEmoji = '\U00002705'    
+@bot.event
+async def on_member_join(member):
+    unverified = discord.utils.get(member.guild.roles, name="unverified") #finds the unverified role in the guild
+    await member.add_roles(unverified) #adds the unverified role to the member
+    
 
-@bot.event()
-async def on_ready():
-    print("[Status] Ready")
+def is_channel(ctx):
+    return ctx.channel.id == 780156651864981516
 
-@bot.event()
-async def on_member_join(ctx, member):
-    channel = discord.utils.get(ctx.guild.channels,name="Добро пожаловать")
-    await channel.send(f"{member.mention} новенький")
 
 @bot.command()
-async def ConfirmMessage(ctx):
-    global confirmEmoji
-    message = await ctx.send("Тест")
-    await message.add_reaction(emoji=confirmEmoji)
-    def check(reaction, user):
-        if reaction.emoji == confirmEmoji:
-            return True
-        else: 
-            return False
-    while True:
-        try:
-            reaction, user = await client.wait_for("reaction_add", check=check, timeout=10)
-        roleToRemove = bot.get_role(791697850387136534)
-        memberToRemoveRole = discord.utils.get(ctx.guild.members,name=user.display_name)
-        await memberToRemoveRole.remove_roles(roleToRemove)
+@commands.check(is_channel) # checks if the channel the command is being used in is the verifiy channel
+async def verify(ctx):
+    unverified = discord.utils.get(ctx.guild.roles, name="unverified") #finds the unverified role in the guild
+    if unverified in ctx.author.roles: #checks if the user running the command has the unveirifed role
+        verify = discord.utils.get(ctx.guild.roles, name="unverified") #finds the verified role in the guild
+        msg = await ctx.send('Верификация ')
+        await msg.add_reaction('✅')
+        e = discord.Embed(color=0x7289da)
+        e.add_field(name='Пожалуйста выполните верификацию.',
+                    value='** ПРИМЕЧАНИЕ: ** Это ** чувствительно к корпусу и пространству **')
+        e.set_image(url='https://media.discordapp.net/attachments/739056945474043986/791710725495193600/IMG_20201220_222752_319.jpg?width=478&height=468')
+        await ctx.author.send(embed=e)
 
+        def check(m):
+            return m.content == 'oh'
+
+        msg = await client.wait_for('message', check=check)
+        e = discord.Embed(color=0x7289da)
+        await ctx.author.remove_roles(unverified)
+        e.add_field(name='Спасибо за верификацию!', value='Теперь сервер открыт для тебя.')
+        await ctx.author.send(embed=e)
+        await ctx.author.add_roles(verify) #adds the verified role to the member
+    else:
+        await ctx.send('Ты верифицированный!')
 
 token = os.environ.get('BOT_TOKEN')
 
