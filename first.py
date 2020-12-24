@@ -155,7 +155,7 @@ def is_channel(ctx):
 async def verify(ctx):
     unverified = discord.utils.get(ctx.guild.roles, name="unverified") 
     if unverified in ctx.author.roles: 
-        verify = discord.utils.get(ctx.guild.roles, name="Житель") 
+        verify = discord.utils.get(ctx.guild.roles, name="Гость") 
         msg = await ctx.send('Верификация ')
         await msg.add_reaction('✅')
         e = discord.Embed(color=0x7289da)
