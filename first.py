@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix='>')
 
 @bot.event
 async def on_member_join(member):
-     role = discord.utils.get(member.server.roles, name="unverified") 
+     role = discord.utils.get(ctx.guild.roles, name="unverified") 
      await bot.add_roles(member, role)
 @bot.command()
 async def server(ctx):
