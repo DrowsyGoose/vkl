@@ -146,9 +146,9 @@ confirmEmoji = '\U00002705'
 async def on_ready():
     print("[Status] Ready")
 
-@bit.event()
+@bot.event()
 async def on_member_join(ctx, member):
-    channel = get(ctx.guild.channels,name="Добро пожаловать")
+    channel = discord.utils.get(ctx.guild.channels,name="Добро пожаловать")
     await channel.send(f"{member.mention} новенький")
 
 @bot.command()
@@ -164,7 +164,7 @@ async def ConfirmMessage(ctx):
     while True:
         try:
             reaction, user = await client.wait_for("reaction_add", check=check, timeout=10)
-        roleToRemove = get(ctx.guild.roles, name='new role')
+        roleToRemove = discord.utils.get(ctx.guild.roles, name='new role')
         memberToRemoveRole = discord.utils.get(ctx.guild.members,name=user.display_name)
         await memberToRemoveRole.remove_roles(roleToRemove)
 
