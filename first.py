@@ -176,10 +176,13 @@ async def verify(ctx):
     else:
         await ctx.send('Ты верифицированный!')
         
-@bot.event
-async def on_member_join(member):
-    role = discord.utils.get(member.guild.roles, name="unverified")
-    await member.add_roles(role)
+role = "unverified" 
+
+@client.event
+async def on_member_join(member): 
+    rank = discord.utils.get(member.guild.roles, name=role) 
+    await member.add_roles(rank)
+    print(f"{member} получил {rank} ")
 
 token = os.environ.get('BOT_TOKEN')
 
