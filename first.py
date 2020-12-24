@@ -163,7 +163,7 @@ async def ConfirmMessage(ctx):
     while True:
         try:
             reaction, user = await client.wait_for("reaction_add", check=check, timeout=10)
-        roleToRemove = get(ctx.guild.roles,name="new role")
+        roleToRemove = discord.utils.get(ctx.guild.roles, name='new role')
         memberToRemoveRole = get(ctx.guild.members,name=user.display_name)
         await memberToRemoveRole.remove_roles(roleToRemove)
 
