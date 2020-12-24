@@ -178,8 +178,8 @@ async def verify(ctx):
         
 @bot.event
 async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name="unverified")
-    await bot.add_roles(member, role)
+    role = discord.utils.get(member.guild.roles, name="unverified")
+    await member.add_roles(role)
 
 token = os.environ.get('BOT_TOKEN')
 
