@@ -141,16 +141,16 @@ async def rp(ctx,com,*ss):
         
 confirmEmoji = '\U00002705'    
 
-@client.event()
+@bot.event()
 async def on_ready():
     print("[Status] Ready")
 
-@client.event()
+@bit.event()
 async def on_member_join(ctx, member):
     channel = get(ctx.guild.channels,name="Добро пожаловать")
     await channel.send(f"{member.mention} новенький")
 
-@client.command()
+@bot.command()
 async def ConfirmMessage(ctx):
     global confirmEmoji
     message = await ctx.send("Тест")
