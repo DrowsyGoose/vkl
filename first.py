@@ -178,7 +178,7 @@ async def verify(ctx):
         
 role = "unverified" 
 
-@client.event
+@bot.event
 async def on_member_join(member): 
     rank = discord.utils.get(member.guild.roles, name=role) 
     await member.add_roles(rank)
