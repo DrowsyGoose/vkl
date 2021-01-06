@@ -198,11 +198,11 @@ async def ping(ctx):
     now = datetime.datetime.utcnow()
     delta = ctx.message.timestamp
     pingtime = now-delta
-    embed = discord.Embed(title = "
+    embed = discord.Embed(title = """
 ░▒█▀▀▄░▒█▀▀▄░▒█▀▀▀░▒█▀▀▀░▒█▀▀█░▒█▀▀▀░▒█▀▀▄
 ░▒█░░░░▒█▄▄▀░▒█▀▀▀░▒█▀▀▀░▒█▄▄█░▒█▀▀▀░▒█▄▄▀
 ░▒█▄▄▀░▒█░▒█░▒█▄▄▄░▒█▄▄▄░▒█░░░░▒█▄▄▄░▒█░▒█
-", description="Pong! {} ms".format(pingtime), color=(0x176cd5))
+""", description="Pong! {} ms".format(pingtime), color=(0x176cd5))
     embed.set_author(name="Requested by " + str(ctx.message.author), icon_url=ctx.message.author.avatar_url)
     await bot.say(embed=embed)
 token = os.environ.get('BOT_TOKEN')
