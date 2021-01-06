@@ -198,7 +198,7 @@ async def ping(ctx):
     now = datetime.datetime.utcnow()
     delta = ctx.message.timestamp
     pingtime = now-delta
-    embed = discord.Embed(title="
+    embed = discord.Embed(title = "
 ░▒█▀▀▄░▒█▀▀▄░▒█▀▀▀░▒█▀▀▀░▒█▀▀█░▒█▀▀▀░▒█▀▀▄
 ░▒█░░░░▒█▄▄▀░▒█▀▀▀░▒█▀▀▀░▒█▄▄█░▒█▀▀▀░▒█▄▄▀
 ░▒█▄▄▀░▒█░▒█░▒█▄▄▄░▒█▄▄▄░▒█░░░░▒█▄▄▄░▒█░▒█
