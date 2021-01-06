@@ -9,6 +9,7 @@ import requests
 from mcstatus import MinecraftServer
 from discord.utils import get
 import datetime
+from MojangAPI import Client
 
 
 
