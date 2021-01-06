@@ -197,7 +197,7 @@ async def py(ctx,*, args):
 @bot.command(pass_context=True)
 async def ping(ctx):
     now = datetime.datetime.utcnow()
-    delta = ctx.message.create_at
+    delta = ctx.message.created_at
     pingtime = now - delta
     embed = discord.Embed(title = """
 ░▒█▀▀▄░▒█▀▀▄░▒█▀▀▀░▒█▀▀▀░▒█▀▀█░▒█▀▀▀░▒█▀▀▄
