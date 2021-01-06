@@ -147,7 +147,7 @@ async def on_member_join(member):
     
 
 def is_channel(ctx):
-    return ctx.channel.id == 780156651864981516
+    return ctx.channel.id == 796338274016821258
 
 
 @bot.command()
