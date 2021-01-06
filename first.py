@@ -183,7 +183,7 @@ async def on_member_join(member):
     rank = discord.utils.get(member.guild.roles, name=role) 
     await member.add_roles(rank)
     print(f"{member} получил {rank} ")
-    
+@bot.command()    
 async def py(ctx, *args):
 
     term = args.replace(" ", "+")
