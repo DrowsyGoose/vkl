@@ -183,6 +183,12 @@ async def on_member_join(member):
     rank = discord.utils.get(member.guild.roles, name=role) 
     await member.add_roles(rank)
     print(f"{member} получил {rank} ")
+    
+async def py(ctx, *args):
+
+    term = args.replace(" ", "+")
+
+    await ctx.send("https://discordpy.readthedocs.io/en/latest/api.html#",term)
 
 token = os.environ.get('BOT_TOKEN')
 
