@@ -186,9 +186,9 @@ async def on_member_join(member):
 @bot.command()    
 async def py(ctx, *args):
 
-    term = args.replace(" ", "+")
 
-    await ctx.send("https://discordpy.readthedocs.io/en/latest/api.html#",term)
+
+    await ctx.send("https://discordpy.readthedocs.io/en/latest/api.html#{0}".format(args))
 
 token = os.environ.get('BOT_TOKEN')
 
