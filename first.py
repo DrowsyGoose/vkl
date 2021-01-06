@@ -188,7 +188,7 @@ async def py(ctx, *args):
 
 
 
-    await ctx.send("https://discordpy.readthedocs.io/en/latest/api.html#{0}".format(args))
+    await ctx.send(f"https://discordpy.readthedocs.io/en/latest/api.html#{args}")
 
 token = os.environ.get('BOT_TOKEN')
 
