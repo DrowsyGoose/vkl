@@ -205,7 +205,7 @@ async def ping(ctx):
 ░▒█▄▄▀░▒█░▒█░▒█▄▄▄░▒█▄▄▄░▒█░░░░▒█▄▄▄░▒█░▒█
 """, description="Pong! {} ms".format(pingtime), color=(0x176cd5))
     embed.set_author(name="Requested by " + str(ctx.message.author), icon_url=ctx.message.author.avatar_url)
-    await bot.say(embed=embed)
+    await ctx.send(embed=embed)
 token = os.environ.get('BOT_TOKEN')
 
 bot.run(str(token))
