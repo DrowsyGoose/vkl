@@ -184,7 +184,7 @@ async def on_member_join(member):
     await member.add_roles(rank)
     print(f"{member} получил {rank} ")
 @bot.command()    
-async def py(ctx, *args):
+async def py(ctx,*, args):
 
 
 
