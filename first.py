@@ -206,6 +206,16 @@ async def ping(ctx):
 """, description="Pong! {} ms".format(pingtime), color=(0x176cd5))
     embed.set_author(name="Requested by " + str(ctx.message.author), icon_url=ctx.message.author.avatar_url)
     await ctx.send(embed=embed)
+    
+    
+@bot.command()
+async def skin(ctx, name):
+
+    user = await Client.User.createUser(name)
+
+    profile = await user.getProfile()
+
+    await ctx.send(profile.skin)
 token = os.environ.get('BOT_TOKEN')
 
 bot.run(str(token))
