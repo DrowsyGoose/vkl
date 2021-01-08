@@ -18,6 +18,26 @@ from MojangAPI import Client
 
 bot = commands.Bot(command_prefix='>')
 
+@bot.command(name='bot')
+async def _bot(ctx):
+    em = discord.Embed(color=discord.Color.green())
+    em.title = 'Bot Info'
+    em.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
+    try:
+        em.description = bot.psa + '\n[Support Server](Скоро)'
+    except AttributeError:
+        em.description = 'Это информация о CreeperGamer. Девелоперы: DrowsyGoose аля RUProstocky'
+    em.add_field(name="Серверов", value=len(bot.guilds))
+    em.add_field(name="Онлайн юзеров", value=str(len({m.id for m in bot.get_all_members() if m.status is not discord.Status.offline})))
+    em.add_field(name='Всего юзеров', value=len(bot.users))
+    em.add_field(name='Каналов', value=f"{sum(1 for g in bot.guilds for _ in g.channels)}")
+    em.add_field(name="Библиотека", value=f"discord.py, discord.js")
+    em.add_field(name="Пригласить", value=f"[Click Here](https://discordapp.com/oauth2/authorize?client_id={bot.user.id}&scope=bot&permissions=268905542)")
+    em.add_field(name='Гитхаб', value='[2 часть](https://github.com/DrowsyGoose/vkl)')
+
+    em.set_footer(text="CreeperGamerBot | Powered by discord.py")
+    await ctx.send(embed=em)
+
 @bot.command()
 async def server(ctx):
     serv = MinecraftServer.lookup("mc.reworlds.ru")
