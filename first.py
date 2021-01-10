@@ -139,8 +139,8 @@ async def go(ctx, num: int = None):
 
 @bot.command()
 async def send(ctx,*, otpr):
-    channel = bot.get_channel(739056945474043986)
-    await channel.send(otpr)
+
+    await ctx.send(otpr)
     
 
 @bot.command()
