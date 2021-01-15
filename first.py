@@ -20,7 +20,7 @@ nest_asyncio.apply()
 
 
 
-bot = commands.Bot(command_prefix='>'), owner_id(424190098863554560)
+bot = commands.Bot(command_prefix='>')
 
 @bot.command(pass_context=True, hidden=True, name='eval')
 
