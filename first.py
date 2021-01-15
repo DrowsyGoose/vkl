@@ -10,6 +10,9 @@ from mcstatus import MinecraftServer
 from discord.utils import get
 import datetime
 from MojangAPI import Client
+import nest_asyncio
+
+nest_asyncio.apply()
 
 
 
