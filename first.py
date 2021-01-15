@@ -35,9 +35,9 @@ async def _eval(ctx, *, code):
 
     env = {
 
-        'bot': self.bot,
+        'bot': bot,
 
-        'client': self.bot,
+        'client': bot,
 
         'ctx': ctx,
 
