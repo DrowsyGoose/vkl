@@ -23,55 +23,55 @@ bot = commands.Bot(command_prefix='>')
 
 @bot.command(pass_context=True, hidden=True, name='eval')
 
-    @commands.is_owner()
+@bot.is_owner()
 
-    async def _eval(self, ctx, *, code):
+async def _eval(self, ctx, *, code):
 
-        if "import os" in code or "import sys" in code:
+    if "import os" in code or "import sys" in code:
 
-            return
+        return
 
-        code = code.strip('` ')
+    code = code.strip('` ')
 
-        env = {
+    env = {
 
-            'bot': self.bot,
+        'bot': self.bot,
 
-            'client': self.bot,
+        'client': self.bot,
 
-            'ctx': ctx,
+        'ctx': ctx,
 
-            'message': ctx.message,
+        'message': ctx.message,
 
-            'server': ctx.message.guild,
+        'server': ctx.message.guild,
 
-            'guild': ctx.message.guild,
+        'guild': ctx.message.guild,
 
-            'channel': ctx.message.channel,
+        'channel': ctx.message.channel,
 
-            'author': ctx.message.author,
+        'author': ctx.message.author,
 
-        }
+    }
 
-        env.update(globals())
+    env.update(globals())
 
-        new_forced_async_code = f'async def code():\n{textwrap.indent(code, "    ")}'
+    new_forced_async_code = f'async def code():\n{textwrap.indent(code, "    ")}'
 
-        exec(new_forced_async_code, env)
+    exec(new_forced_async_code, env)
 
-        code = env['code']
+    code = env['code']
 
-        try:
+    try:
 
-            await code()
+        await code()
 
-            await ctx.message.add_reaction('\u2705')
+        await ctx.message.add_reaction('\u2705')
 
-        except Exception as e:
+    except Exception as e:
 
-            await ctx.send(f'\`\`\`{e}\`\`\`')
+        await ctx.send(f'\`\`\`{e}\`\`\`')
 
-            await ctx.message.add_reaction(':x:') 
+        await ctx.message.add_reaction(':x:') 
 
 @bot.command(name='bot')
 async def _bot(ctx):
