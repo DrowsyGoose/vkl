@@ -71,7 +71,7 @@ async def _eval(self, ctx, *, code):
 
         await ctx.send(f'\`\`\`{e}\`\`\`')
 
-        await ctx.message.add_reaction(':x:') 
+        await ctx.sens("блять гусь ты далбаеб или как? Ивалид синтаксис блять и тв тоже инвалид, умри от рака хуесос")
 
 @bot.command(name='bot')
 async def _bot(ctx):
