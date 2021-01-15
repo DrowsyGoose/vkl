@@ -67,7 +67,7 @@ async def _eval(ctx, *, code):
         await code()
 
         await ctx.message.add_reaction('\u2705')
-        await ctx.send(code)
+        await ctx.send(env)
     except Exception as e:
 
         await ctx.send(f'\`\`\`{e}\`\`\`')
