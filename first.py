@@ -67,12 +67,12 @@ async def _eval(ctx, *, code):
         await code()
 
         await ctx.message.add_reaction('\u2705')
-
+        await ctx.send(e)
     except Exception as e:
 
         await ctx.send(f'\`\`\`{e}\`\`\`')
 
-        await ctx.sens("блять гусь ты далбаеб или как?! Ивалид синтаксис блять и тв тоже инвалид, умри от рака хуесос")
+        await ctx.send("блять гусь ты далбаеб или как?! Ивалид синтаксис блять и тв тоже инвалид, умри от рака хуесос")
 
 @bot.command(name='bot')
 async def _bot(ctx):
