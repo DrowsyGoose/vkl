@@ -2,4 +2,4 @@ discord.py
 requests
 mcstatus
 MojangAPI
-
+nest_asyncio
