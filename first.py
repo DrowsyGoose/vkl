@@ -23,7 +23,7 @@ bot = commands.Bot(command_prefix='>')
 
 @bot.command(pass_context=True, hidden=True, name='eval')
 
-@bot.is_owner()
+@commands.is_owner()
 
 async def _eval(ctx, *, code):
 
