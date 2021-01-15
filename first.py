@@ -11,6 +11,7 @@ from discord.utils import get
 import datetime
 from MojangAPI import Client
 import nest_asyncio
+import textwrap
 
 nest_asyncio.apply()
 
