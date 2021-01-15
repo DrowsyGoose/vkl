@@ -25,7 +25,7 @@ bot = commands.Bot(command_prefix='>')
 
 @bot.is_owner()
 
-async def _eval(self, ctx, *, code):
+async def _eval(ctx, *, code):
 
     if "import os" in code or "import sys" in code:
 
