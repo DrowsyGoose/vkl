@@ -300,17 +300,18 @@ token = os.environ.get('BOT_TOKEN')
 @bot.event
 
 async def on_ready():
+    sss = len(bot.guilds)
 
-     while True:
+    while True:
 
-          await bot.change_presence(status=discord.Status.online, activity=discord.Game("discord.js, discord.py"))
+        await bot.change_presence(status=discord.Status.online, activity=discord.Game("discord.js, discord.py"))
 
-          await sleep(30)
+        await sleep(30)
             
-          await bot.change_presence(status=discord.Status.online, activity=discord.Game("Dev by DrowsyGoose&RUProstocky"))
+        await bot.change_presence(status=discord.Status.online, activity=discord.Game("Dev by DrowsyGoose&RUProstocky"))
 
-          await sleep(30)
+        await sleep(30)
 
-          await bot.change_presence(status=discord.Status.online,activity=discord.Streaming(len(bot.guilds),"серверов"))
+        await bot.change_presence(status=discord.Status.online,activity=discord.Game(sss,"серверов"))
 
 bot.run(str(token))
