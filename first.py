@@ -109,8 +109,9 @@ async def on_ready():
 @bot.command(pass_context = True)
 async def mydick(ctx):
     idd = ctx.message.author.id
+    rand2 = random.choice("км","см","мм")
     rand = random.randint(1,40)
-    embed = discord.Embed(title = "Бот измерял твою пипиську. Ваш результат:", description = rand, color = (0x6eb3ac))
+    embed = discord.Embed(title = "Бот измерял твою пипиську.", description = f"Ваш член {rand} {rand2}", color = (0x6eb3ac))
     await ctx.send(embed = embed)
     with open('gam.json', 'w+') as f:
         json.dump(rand, f)
