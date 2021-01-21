@@ -312,6 +312,6 @@ async def on_ready():
 
         await sleep(30)
 
-        await bot.change_presence(status=discord.Status.online,activity=discord.Game(sss,"серверов"))
+        await bot.change_presence(status=discord.Status.online,activity=discord.Game(sss,"серверов")
 
 bot.run(str(token))
