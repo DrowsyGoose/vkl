@@ -295,7 +295,7 @@ async def skin(ctx, name):
     profile = await user.getProfile()
 
     await ctx.send(profile.skin)
-token = os.environ.get('BOT_TOKEN')
+
 
 @bot.event
 
@@ -313,5 +313,5 @@ async def on_ready():
         await sleep(30)
 
         await bot.change_presence(status=discord.Status.online,activity=discord.Game(sss,"серверов")
-
+token = os.environ.get('BOT_TOKEN')
 bot.run(str(token))
