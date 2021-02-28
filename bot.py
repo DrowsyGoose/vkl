@@ -26,12 +26,6 @@ async def online(ctx):
         await ctx.send(f"Онлайн на сервере: {status.players.online} игрока")
     else:
         await ctx.send(f"Онлайн на сервере: {status.players.online} игроков")
- 
-@bot.command()
-async def onlinelist(ctx):
-    server = MinecraftServer.lookup("appleshield.ru")
-    query = server.query()
-    await ctx.send("Список игроков на сервере: {0}".format(", ".join(query.players.names)))
         
 
     
