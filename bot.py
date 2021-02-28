@@ -15,14 +15,17 @@ async def ping(ctx):
     await ctx.send("pong")
     
 @bot.command()
-async def online(ctx, pl):
+async def online(ctx):
     server = MinecraftServer.lookup("appleshield.ru")
     status = server.status()
-    if pl != list:
-        await ctx.send(f"онлайн на сервере: {status.players.online} игроков")
-    elif pl == list:
-        query = server.query()
-        await ctx.send("Список игроков на сервере: {0}".format(", ".join(query.players.names)))
+    await ctx.send(f"Онлайн на сервере: {status.players.online} игроков")
+ 
+@bot.command()
+async def onlinelist(ctx):
+    server = MinecraftServer.lookup("appleshield.ru")
+    query = server.query()
+    await ctx.send("Список игроков на сервере: {0}".format(", ".join(query.players.names)))
+        
 
     
 token = os.environ.get('BOT_TOKEN')
