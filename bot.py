@@ -14,4 +14,4 @@ async def ping(ctx):
     
 token = os.environ.get('BOT_TOKEN')
     
-bot.run(token)
+bot.run(str(token))
