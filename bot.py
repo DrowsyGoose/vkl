@@ -22,7 +22,7 @@ async def online(ctx):
         await ctx.send(f"На сервере нету игроков.")
     elif status.players.online == 1:
         await ctx.send(f"Онлайн на сервере: {status.players.online} игрок")
-    elif status.players.online == 2 and status.players.online == 3 and status.players.online == 4:
+    elif status.players.online == 2 or status.players.online == 3 or status.players.online == 4:
         await ctx.send(f"Онлайн на сервере: {status.players.online} игрока")
     else:
         await ctx.send(f"Онлайн на сервере: {status.players.online} игроков")
