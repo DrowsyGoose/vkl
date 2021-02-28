@@ -5,7 +5,7 @@ import os
 bot = commands.Bot(command_prefix='-')
 
 
-@bot.event()
+@bot.event
 async def on_ready():
     prine("online")
 
