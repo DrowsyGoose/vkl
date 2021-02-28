@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-
+#d
 bot = commands.Bot(command_prefix='-')
 
 
