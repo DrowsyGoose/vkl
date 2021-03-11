@@ -1,7 +1,8 @@
 import discord
 from discord.ext import commands
 import os
-from mcstatus import MinecraftServer
+import random
+
 
 bot = commands.Bot(command_prefix='-')
 
@@ -15,17 +16,16 @@ async def ping(ctx):
     await ctx.send("pong")
     
 @bot.command()
-async def online(ctx):
-    server = MinecraftServer.lookup("appleshield.ru")
-    status = server.status()
-    if status.players.online == 0:
-        await ctx.send(f"На сервере нету игроков.")
-    elif status.players.online == 1:
-        await ctx.send(f"Онлайн на сервере: {status.players.online} игрок")
-    elif status.players.online == 2 or status.players.online == 3 or status.players.online == 4:
-        await ctx.send(f"Онлайн на сервере: {status.players.online} игрока")
-    else:
-        await ctx.send(f"Онлайн на сервере: {status.players.online} игроков")
+async def who(ctx):
+    pros = random.randint(0, 100)
+    ari = random.choice(["Автосексуал", "Андрогинсексуал", "Андросексуал", "Асексуал", "Бисексуал", "Гетеросексуал", "Гиносексуал", "Гомосексуал", "Грейсексуал", "Демисексуал", "Литосексуал", "Объектумсексуал", "Омнисексуал", "Пансексуал", "Полисексуал", "ПоМосексуал", "Сапиосексуал", "Сколиосексуал", "Цифросексуал"])
+    embed = discord.Embed(
+    title = '**Геемер**',
+    description = f'Вы {ari} на {pros}%',
+    colour = discord.Colour.from_rgb(106, 192, 245)
+    await ctx.send(embed=embed)
+                                    
+    
         
 
     
