@@ -19,7 +19,7 @@ async def ping(ctx):
 async def who(ctx, user: discord.Member):
     pros = random.randint(0, 100)
     ari = random.choice(["Автосексуал", "Андрогинсексуал", "Андросексуал", "Асексуал", "Бисексуал", "Гетеросексуал", "Гиносексуал", "Гомосексуал", "Грейсексуал", "Демисексуал", "Литосексуал", "Объектумсексуал", "Омнисексуал", "Пансексуал", "Полисексуал", "ПоМосексуал", "Сапиосексуал", "Сколиосексуал", "Цифросексуал"])
-    if user = ctx.author:
+    if user == ctx.author:
         embed=discord.Embed(title="**Геемер**", description= f"Вы {ari} на {pros}%", color=0xff0000)
     else:
         embed=discord.Embed(title="**Геемер**", description= f"{user} {ari} на {pros}%", color=0xff0000)
