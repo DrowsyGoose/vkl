@@ -19,10 +19,7 @@ async def ping(ctx):
 async def who(ctx):
     pros = random.randint(0, 100)
     ari = random.choice(["Автосексуал", "Андрогинсексуал", "Андросексуал", "Асексуал", "Бисексуал", "Гетеросексуал", "Гиносексуал", "Гомосексуал", "Грейсексуал", "Демисексуал", "Литосексуал", "Объектумсексуал", "Омнисексуал", "Пансексуал", "Полисексуал", "ПоМосексуал", "Сапиосексуал", "Сколиосексуал", "Цифросексуал"])
-    embed = discord.Embed(
-    title = '**Геемер**',
-    description = f'Вы {ari} на {pros}%',
-    colour = discord.Colour.from_rgb(106, 192, 245)
+    embed=discord.Embed(title="**Геемер**", description= f"Вы {ari} на {pros}%", color=0xff0000)
     await ctx.send(embed=embed)
                                     
     
