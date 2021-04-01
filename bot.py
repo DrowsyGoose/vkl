@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import os
 import random
-from discord.ext.commands import has_permissions, MissingPermissions
 from mcrcon import MCRcon
 
 
@@ -29,7 +28,7 @@ mcr = MCRcon("25575", "Hhdef3536")
 
 
 @bot.command()
-@has_permisions(administrator=True)
+@commands.has_permissions(administrator=True)
 async def wl(ctx, nick):
     with MCRcon("25575", "Hhdef3536") as mrc:
         comm = mcr.command(f"/easywhitelist add {nick}")
