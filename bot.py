@@ -31,6 +31,7 @@ async def who(ctx):
 @commands.has_permissions(administrator=True)
 async def wl(ctx, nick):
     client = factorio_rcon.RCONClient("188.127.241.11", 25575, "Hhdef3536")
+    client.connect
     response = client.send_command(f"/easywl add {nick}")
     await ctx.send(f"Игрок под ником {nick} был добавлен в вайтлист")
 
