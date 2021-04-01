@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import random
-from rcon import Client
+
 
 
 bot = commands.Bot(command_prefix='-')
@@ -28,9 +28,7 @@ async def who(ctx):
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def wl(ctx, nick):
-    with Client('188.127.241.11', 25575, passwd='Hhdef3536') as client:
-    response = client.run(f"easywhilelist add {nick}")
-    print(response)
+
                                     
     
         
