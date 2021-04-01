@@ -24,13 +24,11 @@ async def who(ctx):
     await ctx.send(embed=embed)
     #d
     
-mcr = MCRcon("25575", "Hhdef3536")
-
 
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def wl(ctx, nick):
-    with MCRcon("25575", "Hhdef3536") as mrc:
+    with MCRcon("188.127.241.11", "Hhdef3536") as mrc:
         comm = mcr.command(f"/easywhitelist add {nick}")
         print(comm)
                                     
