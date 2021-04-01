@@ -29,7 +29,7 @@ async def who(ctx):
 @commands.has_permissions(administrator=True)
 async def wl(ctx, nick):
     with Client('188.127.241.11', 25575, passwd='Hhdef3536') as client:
-    response = client.run(rcon.console.rconcmd(f"easywhilelist add {nick}"))
+    response = client.run(f"easywhilelist add {nick}")
     print(response)
                                     
     
