@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import os
 import random
+from discord.ext.commands import has_permissions, MissingPermissions
+from mcrcon import MCRcon
 
 
 bot = commands.Bot(command_prefix='-')
@@ -22,6 +24,16 @@ async def who(ctx):
     embed=discord.Embed(title="**Геемер**", description= f"Вы {ari} на {pros}%", color=0xff0000)
     await ctx.send(embed=embed)
     #d
+    
+mcr = MCRcon("25575", "Hhdef3536")
+
+
+@bot.command()
+@bot.has_permisions(administrator=True)
+async def wl(ctx, nick):
+    mcr = MCRcon("25575", "Hhdef3536") as mrc:
+        comm = mcr.command(f"/easywhitelist add {nick}")
+        print(comm)
                                     
     
         
