@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import random
-from mcrcon import MCRcon
+from rcon import Client
 
 
 bot = commands.Bot(command_prefix='-')
@@ -28,9 +28,9 @@ async def who(ctx):
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def wl(ctx, nick):
-    with MCRcon("188.127.241.11", "Hhdef3536") as mrc:
-        comm = mcr.command(f"/easywhitelist add {nick}")
-        print(comm)
+    with Client('188.127.241.11', 25575, passwd='Hhdef3536') as client:
+    response = client.run(rcon.console.rconcmd(f"easywhilelist add {nick}"))
+    print(response)
                                     
     
         
