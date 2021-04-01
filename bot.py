@@ -29,7 +29,7 @@ mcr = MCRcon("25575", "Hhdef3536")
 
 
 @bot.command()
-@bot.has_permisions(administrator=True)
+@has_permisions(administrator=True)
 async def wl(ctx, nick):
     with MCRcon("25575", "Hhdef3536") as mrc:
         comm = mcr.command(f"/easywhitelist add {nick}")
