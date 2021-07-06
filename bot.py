@@ -35,7 +35,7 @@ async def button(ctx):
 
         components = [
 
-            Button(label = "Спойлер")
+            Button(label = "Спойлер ")
 
         ]
 
