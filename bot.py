@@ -31,11 +31,9 @@ async def button(ctx):
 
     await ctx.send(
 
-        "Hello, World!",
-
         components = [
 
-            Button(label = "WOW button!")
+            Button(label = "Спойлер!")
 
         ]
 
@@ -45,7 +43,7 @@ async def button(ctx):
 
     interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("WOW"))
 
-    await interaction.respond(content = "Button clicked!")
+    await interaction.respond(content = "Я твою мать ебал)")
 
 
 
