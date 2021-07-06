@@ -2,7 +2,8 @@ import discord
 from discord.ext import commands
 import os
 import random
-import discord_components 
+from discord.ext.commands import Bot
+from discord_components import DiscordComponents, Button, Select, SelectOption
 
 
 
