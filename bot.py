@@ -29,15 +29,7 @@ async def on_ready():
 
 async def button(ctx):
 
-    await ctx.send(
-
-        components = [
-
-            Button(label = "Спойлер!")
-
-        ]
-
-    )
+    await ctx.send(components = [Button(label = "Спойлер!")])
 
 
 
