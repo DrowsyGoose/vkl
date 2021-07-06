@@ -44,7 +44,7 @@ async def button(ctx):
 
 
 
-    interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("WOW"))
+    interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("Спойлер!"))
 
     await interaction.respond(content = "Я твою мать ебал)")
 
