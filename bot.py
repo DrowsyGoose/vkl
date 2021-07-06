@@ -35,7 +35,7 @@ async def button(ctx):
 
         components = [
 
-            Button(label = "Спойлер ")
+            Button(label = "Нажми на меня")
 
         ]
 
@@ -43,7 +43,7 @@ async def button(ctx):
 
 
 
-    interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("Спойлер"))
+    interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("Нажми"))
 
     await interaction.respond(content = "Ваша мать была выебана!")
 
