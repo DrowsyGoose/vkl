@@ -29,7 +29,17 @@ async def on_ready():
 
 async def button(ctx):
 
-    await ctx.send(components = [Button(label = "Спойлер!")])
+    await ctx.send(
+        
+        components = [
+            
+            "", 
+            
+            Button(label = "Спойлер!")
+                              
+                                ]
+
+                  )
 
 
 
@@ -47,11 +57,11 @@ async def select(ctx):
 
     await ctx.send(
 
-        "Hello, World!",
+        "Выбери:",
 
         components = [
 
-            Select(placeholder="select something!", options=[SelectOption(label="a", value="A"), SelectOption(label="b", value="B")])
+            Select(placeholder="От этого зависит твоя жизнь!", options=[SelectOption(label="Я гомосексуал", value="A"), SelectOption(label="Я бисексуал", value="B")])
 
         ]
 
@@ -61,7 +71,11 @@ async def select(ctx):
 
     interaction = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "A")
 
-    await interaction.respond(content = f"{interaction.component[0].label} selected!")
+    await interaction.respond(content = "Мне похуй")
+    
+    interaction = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "B")
+
+    await interaction.respond(content = "Мне похуй")
 
 
     
