@@ -29,13 +29,13 @@ async def on_ready():
 
 async def button(ctx):
 
-     await ctx.send(
+    await ctx.send(
 
-        "",
+        " ",
 
         components = [
 
-            Button(label = "Спойлер!")
+            Button(label = "Спойлер")
 
         ]
 
@@ -43,10 +43,10 @@ async def button(ctx):
 
 
 
+    interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("Спойлер"))
 
-    interaction = await bot.wait_for("button_click", check = lambda i: i.component.label.startswith("Спойлер!"))
+    await interaction.respond(content = "Ваша мать была выебана!")
 
-    await interaction.respond(content = "Я твою мать ебал)")
 
 
 
