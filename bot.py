@@ -74,9 +74,9 @@ async def select(ctx):
 
     await interaction.respond(content = "Мне похуй")
     
-    interaction = await bot.wait_for("select_option", check = lambda i: i.component[1].value == "B")
+    interaction1 = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "B")
 
-    await interaction.respond(content = "Мне похуй")
+    await interaction1.respond(content = "Мне похуй")
 
 
     
