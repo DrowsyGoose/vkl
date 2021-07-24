@@ -48,15 +48,14 @@ async def button(ctx):
     await interaction.respond(content = "Поздравляю, ваша мать была выебана!")
 
 
-
-
+gg = 0
+hh = 0
 
 
 @bot.command()
 
 async def select(ctx, mess):
-    gg = 0
-    hh = 0
+
 
     await ctx.send(
 
@@ -64,7 +63,7 @@ async def select(ctx, mess):
 
         components = [
 
-            Select(placeholder="От этого зависит твоя жизнь!", options=[SelectOption(label="Я гомосексуал", value="A"), SelectOption(label="Я бисексуал", value="B")])
+            Select(placeholder="Нажми чтобы выбрать", options=[SelectOption(label="Да", value="A"), SelectOption(label="Нет", value="B")])
 
         ]
 
