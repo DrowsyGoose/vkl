@@ -71,9 +71,9 @@ async def select(ctx, mess):
 
 
 
-    interaction = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "A", gg = gg + 1)
+    interaction = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "A")
 
-    await interaction.respond(content = "Спасибо за ваш голос. Проверить голоса: !golosa")
+    await interaction.respond(content = "Спасибо за ваш голос. Проверить голоса: !golosa", gg = gg + 1)
     
     interaction1 = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "B")
 
