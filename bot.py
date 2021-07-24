@@ -54,11 +54,13 @@ async def button(ctx):
 
 @bot.command()
 
-async def select(ctx):
+async def select(ctx, mess):
+    gg = 0
+    hh = 0
 
     await ctx.send(
 
-        "Выбери:",
+        f"{mess}",
 
         components = [
 
@@ -72,12 +74,19 @@ async def select(ctx):
 
     interaction = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "A")
 
-    await interaction.respond(content = "Мне похуй")
+    await interaction.respond(content = "Спасибо за ваш голос. Проверить голоса: !golosa")
     
     interaction1 = await bot.wait_for("select_option", check = lambda i: i.component[0].value == "B")
 
-    await interaction1.respond(content = "Мне похуй")
-
+    await interaction1.respond(content = "Спасибо за ваш голос. Проверить голоса: !golosa")
+    if i.component[0].value == "A":
+        gg = gg + 1
+    elif i.components[0].value == "B":
+        hh = hh + 1
+        
+@bot.command()
+async def golosa(ctx):
+    await ctx.send(f"Голоса за: {gg}. Голоса против: {hh}")
 
     
 token = os.environ.get('BOT_TOKEN')
